@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('content', ['page' => $page, 'menu' => $menu]);
 })->name('home');
 
-Route::get('/{slug}', function ($slug) {
+Route::get('/p/{slug}', function ($slug) {
     $page = \App\Models\Page::where('slug', $slug)->first();
     if (!$page) {
         abort(404);
